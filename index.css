@@ -33,6 +33,7 @@ main{
     border-bottom: 1px solid gray;
     height: 30%; 
     display: flex;
+    margin-top: 10px;
 }
 span{
     font-size: 55px;
