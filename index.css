@@ -4,6 +4,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: "Smythe", system-ui;
+
 } 
 .app-container{
     border: 1px solid gray;
@@ -14,7 +16,7 @@ body {
 /* TOP  */
 header{
     background-color: gray;
-    height: 100px;
+    height: 80px;
 }
 header img{
     width: 100%;    
@@ -22,16 +24,15 @@ header img{
 
 /* Middle */
 main{
-    height: 55%;
     padding: 20px;
-    padding-top: 40px;
+    padding-top: 60px;
     /* border: 1px solid red; */
     padding-bottom: 0;
 }
 
 .food-container{
     border-bottom: 1px solid gray;
-    height: 30%; 
+    height: 25%; 
     display: flex;
     margin-top: 10px;
 }
@@ -59,7 +60,7 @@ span{
     font-weight: 500;
     margin-top: 4px;
 }
-button{
+#add-btn{
     border: 1px solid gray;
     color: black;
     background-color: transparent;
@@ -79,9 +80,39 @@ button{
     background-color: aliceblue;
     /* height:30%; */
     text-align: center;
+    padding: 20px;
     margin-top: 0;
     padding-top: 0;
+    padding-right: 35px;
 }
 #payment-container h2{
     margin: 0;
-} 
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#order-btn{
+    background-color: #16DB99;
+    border: 0;
+    width: 90%;
+    padding: 17px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+}
+
+.chosen-items{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 30px;
+}
+
+.item-price{
+    border-top: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
