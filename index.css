@@ -1,3 +1,86 @@
 body {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} 
+.app-container{
+    border: 1px solid gray;
+    width: 450px;
+    height: 795px;
+}
+
+/* TOP  */
+header{
+    background-color: gray;
+    height: 100px;
+}
+header img{
+    width: 100%;    
+}
+
+/* Middle */
+main{
+    height: 55%;
+    padding: 20px;
+    padding-top: 40px;
+    /* border: 1px solid red; */
+    padding-bottom: 0;
+}
+
+.food-container{
+    border-bottom: 1px solid gray;
+    height: 30%; 
+    display: flex;
+}
+span{
+    font-size: 55px;
+    margin: auto;
+    margin-right: 5px;
+    margin-bottom: 50px;
+}
+.food-description{
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10;
+}
+
+.food-description h1{
+    font-size: 17px;
+    margin: 0;
+}
+.food-description h2{
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+button{
+    border: 1px solid gray;
+    color: black;
+    background-color: transparent;
+    font-size: 25px;   
+    border-radius: 50%;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+}
+
+.food{
+    width: 100%;
+}
+
+/* Bottom */
+
+#payment-container{
+    background-color: aliceblue;
+    /* height:30%; */
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+#payment-container h2{
+    margin: 0;
 } 

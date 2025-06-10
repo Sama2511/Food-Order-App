@@ -14,10 +14,10 @@ export const menuArray = [
         id: 1
     },
         {
-        name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
-        price: 12,
-        emoji: "🍺",
+        name: "Soft Drink",
+        ingredients: ["Water, Sweeteners, Carbon Dioxide"],
+        price: 3.49,
+        emoji: "🥤",
         id: 2
     }
 ]
