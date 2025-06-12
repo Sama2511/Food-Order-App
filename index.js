@@ -16,20 +16,41 @@ addEventListener('click', function(e){
             const parent = e.target.closest('#chosen-items')
             if(parent.querySelector('h3').textContent === 'Pizza'){
                 if(parent.querySelector(".price").textContent > 14){
-                    console.log('more than 14')
+
+                    parent.querySelector(".price").textContent -= 14
+                    total -= 14
+                    document.getElementById("total-price").textContent = total.toFixed(2)
                 }else{
-                    console.log('is 14')
+                    total -= 14
+                    document.getElementById("total-price").textContent = total.toFixed(2)
+                    parent.remove()
                 }
             }else if(parent.querySelector('h3').textContent === 'Hamburger'){
-                console.log("HAMBURGER")
+                if(parent.querySelector(".price").textContent > 12){
+                    parent.querySelector(".price").textContent -= 12
+                    total -= 12
+                    document.getElementById("total-price").textContent = total.toFixed(2)
+                }else{
+                    total -= 12
+                    document.getElementById("total-price").textContent = total.toFixed(2)
+                    parent.remove()
+                }
             }else{
-                console.log("Softy")
+                if(parent.querySelector(".price").textContent > 3.49){
+                    parent.querySelector(".price").textContent -= 3.49
+                    total -= 3.49
+                    document.getElementById("total-price").textContent = total.toFixed(2)
+                }else{
+                    total -= 3.49
+                    document.getElementById("total-price").textContent = total.toFixed(2)
+                    parent.remove()
+                }
             }
-            // console.log(document.querySelector(".price").textContent)
-            // console.log(document.querySelector('#price-container h3').textContent)
-            // parent.remove();
             numbOforders -= 1
-
+            if(numbOforders ===0){
+                document.getElementById("payment-container").style.display = 'none'
+                document.getElementById("order-btn").style.display= 'none'
+            }
     }
 })
 
