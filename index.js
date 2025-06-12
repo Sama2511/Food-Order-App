@@ -1,12 +1,15 @@
 import {menuArray} from '/data.js'
 
+// const total = document.getElementById("total-price").textContent
+// total= Number(total)
 
 addEventListener('click', function(e){
     if(e.target.dataset.add){
+        document.getElementById("payment-container").style.display = 'flex'
+        document.getElementById("order-btn").style.display= 'flex'
         addItem(e.target.dataset.add)
     }
 })
-
 addEventListener('click', function(e){
         if(e.target.matches('[data-remove]')){
             const parent = e.target.closest('#chosen-items')
@@ -14,27 +17,34 @@ addEventListener('click', function(e){
     }
 })
 
+
+
 function addItem(item){
     const existInMenu = menuArray.filter(function(menu){
         return menu.id === item
     })[0]
-        addOrder(existInMenu)
+        if(!document.querySelector(`#price-container [data-id ="exist${existInMenu.id}"]`)){
+        document.getElementById('price-container').innerHTML += `
+        <div class="chosen-items" id="chosen-items" data-id =exist${existInMenu.id} >
+            <div id="right-side">
+                <h3>${existInMenu.name}</h3>
+                <a href="#/" data-remove= option >remove</a>
+            </div>
+            <p>$<p>
+            <p id='current-price${existInMenu.priceID}'>${existInMenu.price}</p>`  
+            
+        }else if(document.querySelector(`#price-container [data-id ="exist${existInMenu.id}"]`)){
+            let currentPrice = document.querySelector(`#current-price${existInMenu.priceID}`).textContent
+            currentPrice = Number(currentPrice)
+            let newprice = 0
+            newprice = currentPrice + existInMenu.price
+            document.querySelector(`#current-price${existInMenu.priceID}`).textContent = newprice.toFixed(2)
+            console.log(newprice.toFixed(2))
+            console.log(total)
+        }
     }
 
-function addOrder(menu){
-    if(document.querySelector(`#price-container [data-id="exist ${menu.id}"]`)){
-        console.log('exist')
-    }else{
-        console.log('doesnt exist')
-    }
-    document.getElementById('price-container').innerHTML += `
-    <div class="chosen-items" id="chosen-items" data-id =exist${menu.id} >
-        <div id="right-side">
-            <h3>${menu.name}</h3>
-            <a href="#/" data-remove= option >remove</a>
-        </div>
-        <p>$${menu.price}</p>`    
-}
+
 
 function buildmenu(){
     let menu = ''
@@ -62,3 +72,4 @@ function render(){
 }
 
 render()
+
