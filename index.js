@@ -1,7 +1,8 @@
 import {menuArray} from '/data.js'
 
-// const total = document.getElementById("total-price").textContent
-// total= Number(total)
+let total = document.getElementById("total-price").textContent
+total = Number(total)
+let numbOforders = 0
 
 addEventListener('click', function(e){
     if(e.target.dataset.add){
@@ -13,10 +14,24 @@ addEventListener('click', function(e){
 addEventListener('click', function(e){
         if(e.target.matches('[data-remove]')){
             const parent = e.target.closest('#chosen-items')
-            parent.remove();
+            if(parent.querySelector('h3').textContent === 'Pizza'){
+                if(parent.querySelector(".price").textContent > 14){
+                    console.log('more than 14')
+                }else{
+                    console.log('is 14')
+                }
+            }else if(parent.querySelector('h3').textContent === 'Hamburger'){
+                console.log("HAMBURGER")
+            }else{
+                console.log("Softy")
+            }
+            // console.log(document.querySelector(".price").textContent)
+            // console.log(document.querySelector('#price-container h3').textContent)
+            // parent.remove();
+            numbOforders -= 1
+
     }
 })
-
 
 
 function addItem(item){
@@ -30,8 +45,11 @@ function addItem(item){
                 <h3>${existInMenu.name}</h3>
                 <a href="#/" data-remove= option >remove</a>
             </div>
-            <p>$<p>
-            <p id='current-price${existInMenu.priceID}'>${existInMenu.price}</p>`  
+            <p class= 'price' id='current-price${existInMenu.priceID}'>${existInMenu.price}</p>`
+
+            total += existInMenu.price
+            document.getElementById("total-price").textContent = "$ "+ total.toFixed(2)
+            numbOforders += 1
             
         }else if(document.querySelector(`#price-container [data-id ="exist${existInMenu.id}"]`)){
             let currentPrice = document.querySelector(`#current-price${existInMenu.priceID}`).textContent
@@ -39,8 +57,10 @@ function addItem(item){
             let newprice = 0
             newprice = currentPrice + existInMenu.price
             document.querySelector(`#current-price${existInMenu.priceID}`).textContent = newprice.toFixed(2)
-            console.log(newprice.toFixed(2))
-            console.log(total)
+
+            total += existInMenu.price
+            document.getElementById("total-price").textContent =  "$ " +total.toFixed(2)
+            numbOforders += 1 
         }
     }
 

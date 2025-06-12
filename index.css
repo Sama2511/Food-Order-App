@@ -8,9 +8,10 @@ body {
 
 } 
 .app-container{
-    border: 1px solid gray;
+    border: 3px solid gray;
     width: 450px;
     /* height: 795px; */
+    /* margin-bottom: 100px; */
 }
 
 /* TOP  */
