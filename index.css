@@ -10,7 +10,7 @@ body {
 .app-container{
     border: 1px solid gray;
     width: 450px;
-    height: 795px;
+    /* height: 795px; */
 }
 
 /* TOP  */
@@ -60,7 +60,7 @@ span{
     font-weight: 500;
     margin-top: 4px;
 }
-#add-btn{
+.add-btn{
     border: 1px solid gray;
     color: black;
     background-color: transparent;
@@ -78,12 +78,15 @@ span{
 
 #payment-container{
     background-color: aliceblue;
-    /* height:30%; */
+    height:263px;
     text-align: center;
     padding: 20px;
     margin-top: 0;
     padding-top: 0;
     padding-right: 35px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 #payment-container h2{
     margin: 0;
@@ -95,11 +98,16 @@ span{
 #order-btn{
     background-color: #16DB99;
     border: 0;
-    width: 90%;
+    width: 400px;
     padding: 17px;
     border-radius: 4px;
     color: white;
     font-weight: 600;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);   
+    inset-block-end: 20px;
+    cursor: pointer;
 }
 
 .chosen-items{
@@ -107,12 +115,24 @@ span{
     justify-content:space-between;
     align-items: center;
     height: 30px;
+    /* border: 1px solid red; */
+}
+a{
+    text-decoration: none;
 }
 
 .item-price{
-    border-top: 1px solid red;
+    border-top: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
+}
+#right-side{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.chosen-items p{
 }
