@@ -66,6 +66,7 @@ function addItem(item){
                 <h3>${existInMenu.name}</h3>
                 <a href="#/" data-remove= option >remove</a>
             </div>
+            <p>$<p>
             <p class= 'price' id='current-price${existInMenu.priceID}'>${existInMenu.price}</p>`
 
             total += existInMenu.price
@@ -84,6 +85,26 @@ function addItem(item){
             numbOforders += 1 
         }
     }
+
+const completeBtn = document.getElementById("order-btn")
+const payBtn = document.getElementById('submit-btn')
+
+completeBtn.addEventListener('click', function(){
+        document.getElementById("payment-window").style.display= 'flex'
+})
+
+payBtn.addEventListener('click', function(){
+        event.preventDefault()
+        document.getElementById("payment-window").style.display= 'none'
+        document.getElementById("order-btn").style.display= 'none'
+        const custmorName = document.querySelector('input[name="Fullname"]').value
+        document.getElementById('payment-container').innerHTML = `
+        <div id= "confirm-container">
+            <h2> Thanks, ${custmorName}! Your order is on its Way</h2>
+        </div>`
+
+})
+
 
 
 
