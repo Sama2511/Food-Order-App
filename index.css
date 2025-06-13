@@ -32,9 +32,12 @@ main{
 }
 
 .food-container{
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     display: flex;
     margin-top: 10px;
+}
+.food-container:not(:last-child){
+       border-bottom: 1px solid gray;
 }
 span{
     font-size: 55px;
