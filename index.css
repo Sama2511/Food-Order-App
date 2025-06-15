@@ -108,7 +108,7 @@ span{
     position:absolute;
     left: 50%;
     transform: translateX(-50%);   
-    bottom: 80px;
+    bottom:10%;
     cursor: pointer;
     display: none;
     justify-content: center;
