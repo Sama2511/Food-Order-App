@@ -32,7 +32,6 @@ main{
 }
 
 .food-container{
-    /* border-bottom: 1px solid gray; */
     display: flex;
     margin-top: 10px;
 }
