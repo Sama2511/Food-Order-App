@@ -10,7 +10,7 @@ body {
 .app-container{
     border: 3px solid gray;
     width: 400px;
-    /* height: 795px; */
+    height: 95%;
     /* margin-bottom: 100px; */
 }
 
