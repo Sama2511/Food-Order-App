@@ -93,7 +93,7 @@ completeBtn.addEventListener('click', function(){
         document.getElementById("payment-window").style.display= 'flex'
 })
 
-payBtn.addEventListener('click', function(){
+payBtn.addEventListener('click', function(event){
         event.preventDefault()
         document.getElementById("payment-window").style.display= 'none'
         document.getElementById("order-btn").style.display= 'none'
